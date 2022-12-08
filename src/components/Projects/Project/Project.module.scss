@@ -1,0 +1,190 @@
+$secondary-gray: #939db8;
+$main-hover: rgb(55, 53, 47, 0.03);
+$edit-delete-border: rgb(200, 200, 200);
+
+.project {
+  position: relative;
+}
+
+.project_link {
+  text-decoration: none;
+  border-radius: 4px;
+  background-color: #fff;
+  border: 1px solid rgb(15 15 15 / 10%);
+  box-shadow: rgb(15 15 15 / 10%) 0px 2px 4px;
+  overflow: hidden;
+  margin-bottom: 5px;
+}
+
+.project_link:hover {
+  background-color: $main-hover;
+}
+
+.project_ad_block {
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  padding: 8px 10px;
+}
+
+.svg {
+  width: 25px;
+  height: 25px;
+  margin-right: 8px;
+}
+
+.project_info {
+  max-width: 100%;
+  width: auto;
+  white-space: pre-wrap;
+  word-break: break-word;
+  min-height: 1em;
+  font-size: 16px;
+  font-weight: 500;
+  flex-grow: 1;
+  padding: 2px;
+  color: #000;
+}
+
+.project_info span {
+  font-size: 14px;
+}
+
+.project_time {
+  color: $secondary-gray;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.edit_delete_container {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 15;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0.5px solid $edit-delete-border;
+  border-radius: 3px;
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+    rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+  animation-duration: 0.4s;
+  animation-name: appear;
+}
+
+.edit_delete_svg {
+  width: 16px;
+  height: 16px;
+}
+
+.edit_button {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  border-radius: 3px 0 0 3px;
+  &:hover {
+    background-color: #efefee;
+  }
+}
+
+.delete_button {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  border-radius: 0 3px 3px 0;
+  border-left: 0.5px solid $edit-delete-border;
+  &:hover {
+    background-color: #efefee;
+  }
+}
+
+.close_button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  cursor: pointer;
+  animation: top-disappear 0.4s;
+}
+
+.close_svg {
+  width: 20px;
+  height: 20px;
+}
+
+.form_block {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+
+.buttons_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 44px;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  width: 84px;
+  padding: 8px 16px;
+  cursor: pointer;
+  background-color: transparent;
+  border-radius: 6px;
+}
+
+.create_save_button {
+  background-color: black;
+  color: #fff;
+  border: 1px solid black;
+  margin-left: 16px;
+  font-size: 16px;
+}
+
+.cancel_edit_button {
+  background-color: transparent;
+  border: 1px solid black;
+  color: black;
+  font-size: 16px;
+}
+
+.cancel_edit_button:hover {
+  background-color: black;
+  color: #fff;
+  border: transparent;
+}
+
+.create_save_button:hover {
+  background-color: transparent;
+  color: black;
+}
+
+.drag_pointer {
+  pointer-events: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -6px;
+  height: 4px;
+  z-index: 40;
+  background-color: rgb(35, 131, 236, 0.63);
+  opacity: 1;
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
